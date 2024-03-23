@@ -14,8 +14,9 @@ namespace Portfolio
 
         public void LoadLevel(ScenesType type)
         {
-            SceneManager.UnloadSceneAsync(0);
+
             SceneManager.LoadSceneAsync(_scenesMap[type].name, LoadSceneMode.Additive);
+            SceneManager.UnloadSceneAsync(0);
         }
         public void UnloadScene(ScenesType type)
         {

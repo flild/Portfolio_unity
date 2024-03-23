@@ -10,6 +10,7 @@ namespace Portfolio.PlayerSpace
         private InputReaderSO _input;
         private PlayerStatsSO _stats;
         private CameraControll _camera;
+        private Animation _animationView;
         private Vector3 calcDirection;
         private Vector2 inputDirection;
 
@@ -21,6 +22,7 @@ namespace Portfolio.PlayerSpace
             _input = input;
             _stats = stats;
             _rb = _view.GetComponent<Rigidbody>();
+            _animationView = new Animation(_view.GetComponent<Animator>());
             _camera = new CameraControll(_view.GetComponentInChildren<Camera>(), _stats.MouseSense);
             Init();
         }
@@ -34,17 +36,19 @@ namespace Portfolio.PlayerSpace
         }
         private void OnFixedUpdate()
         {
-            _rb.velocity = calcDirection * _stats.MoveSpeed * Time.deltaTime;
             calcDirection = _rb.transform.forward * inputDirection.y + _rb.transform.right * inputDirection.x;
+            calcDirection = calcDirection * _stats.MoveSpeed * Time.deltaTime;
+            _rb.velocity = new Vector3(calcDirection.x, _rb.velocity.y, calcDirection.z);
         }
         private void OnMove(Vector2 direction)
         {
+            _animationView.Move(direction);
             inputDirection = direction;
-
+            Debug.Log(_rb.velocity.y);
         }
         private void OnJump()
         {
-            _rb.AddForce(Vector3.up * _stats.JumpForce);
+            _rb.AddForce(Vector3.up * _stats.JumpForce, ForceMode.Acceleration);
         }
         private void OnMouseMove(Vector2 dir)
         {

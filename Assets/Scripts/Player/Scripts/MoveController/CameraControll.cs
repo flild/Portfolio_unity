@@ -12,6 +12,8 @@ namespace Portfolio.PlayerSpace
         private float _mouseSense;
         public CameraControll(Camera camera, float mouseSense)
         {
+            if (camera == null)
+                Debug.LogError("Camera in Camera controll is null");
             _camera = camera;
             _mouseSense = mouseSense;
         }

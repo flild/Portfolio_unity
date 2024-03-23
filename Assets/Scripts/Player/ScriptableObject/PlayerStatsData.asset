@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 300
   _jumpHeight: 200
-  _mouseSense: 0.5
+  _mouseSense: 0.2
