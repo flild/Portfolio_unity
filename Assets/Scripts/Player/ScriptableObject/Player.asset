@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   _stats: {fileID: 11400000, guid: 9b9ba5a4cbcc5de439fd51a8ed09e6c0, type: 2}
-  _view: {fileID: 5092944527154128735, guid: a8c74bf92276a174eae54d55b5007ad0, type: 3}
-  _input: {fileID: 11400000, guid: 95728f3edcc56c54fb9a25c2507c355b, type: 2}
+  _input: {fileID: 11400000, guid: 0555d4d72df1e1f44974685360ac73d0, type: 2}

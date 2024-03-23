@@ -10,15 +10,19 @@ namespace Portfolio.PlayerSpace
         private float _moveSpeed;
         [SerializeField]
         private float _jumpHeight;
+        [SerializeField, Range(0.1f, 1)]
+        private float _mouseSense;
         public float JumpForce
         {
             get => _jumpHeight;
-            private set => _moveSpeed = value;
         }
         public float MoveSpeed
         {
             get => _moveSpeed;
-            private set => _moveSpeed = value;
+        }
+        public float MouseSense
+        {
+            get => _mouseSense;
         }
     }
 }

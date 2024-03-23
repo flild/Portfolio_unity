@@ -11,7 +11,7 @@ namespace Portfolio
         [SerializeField]
         private PlayerView _playerView;
         [SerializeField]
-        private Player _player;
+        private PlayerSO _player;
 
 
         private void Awake()
@@ -25,6 +25,10 @@ namespace Portfolio
         private void Start()
         {
             
+        }
+        private void OnDestroy()
+        {
+            _player.Dispose();
         }
 
         //todo list

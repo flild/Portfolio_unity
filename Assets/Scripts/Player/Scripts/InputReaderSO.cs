@@ -4,11 +4,13 @@ using UnityEngine.InputSystem;
 
 namespace Portfolio
 {
+    [CreateAssetMenu(fileName = "InputReadear", menuName = "ScriptableObject/Player/InputReader")]
     public class InputReaderSO : ScriptableObject, PlayerControls.IPlayerMainMapActions
     {
         private PlayerControls _gameInput;
         public event Action<Vector2> MoveEvent;
         public event Action JumpEvent;
+        public event Action<Vector2> MouseMove;
 
         private void OnEnable()
         {
@@ -35,6 +37,10 @@ namespace Portfolio
         public void OnWASD_Move(InputAction.CallbackContext context)
         {
             MoveEvent?.Invoke(context.ReadValue<Vector2>());
+        }
+        public void OnMouseDelta(InputAction.CallbackContext context)
+        {
+            MouseMove?.Invoke(context.ReadValue<Vector2>());
         }
     }
 }

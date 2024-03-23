@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Portfolio.PlayerSpace
@@ -6,9 +7,14 @@ namespace Portfolio.PlayerSpace
     public class PlayerView : MonoBehaviour
     {
         public Rigidbody Rigidbody { get; private set; }
+        public event Action FixedUpdateEvent;
         private void Awake()
         {
             Rigidbody = GetComponent<Rigidbody>();
+        }
+        private void FixedUpdate()
+        {
+            FixedUpdateEvent?.Invoke();
         }
 
     }

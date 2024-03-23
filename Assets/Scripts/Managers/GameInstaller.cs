@@ -8,7 +8,7 @@ namespace Portfolio
     public class GameInstaller : MonoInstaller
     {
         [SerializeField]
-        private Player _player;
+        private PlayerSO _player;
 
         public override void InstallBindings()
         {
