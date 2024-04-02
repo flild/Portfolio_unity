@@ -24,7 +24,7 @@ namespace Portfolio
         }
         public void DisableMainMap()
         {
-            _gameInput.Enable();
+            _gameInput.Disable();
         }
         public void OnJump(InputAction.CallbackContext context)
         {

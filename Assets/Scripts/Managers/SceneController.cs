@@ -26,7 +26,7 @@ namespace Portfolio
 
     public enum ScenesType
     {
-        RagdollLavel,
+        RagdollLevel,
         StartMenu
     }
 }

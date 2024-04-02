@@ -12,7 +12,7 @@ namespace Portfolio
         //логика переключение лвлов
         public void LoadNextLevel()
         {
-            _scenes.LoadLevel(ScenesType.RagdollLavel);
+            _scenes.LoadLevel(ScenesType.RagdollLevel);
         }
 
     }

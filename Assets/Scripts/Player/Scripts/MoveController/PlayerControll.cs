@@ -44,7 +44,6 @@ namespace Portfolio.PlayerSpace
         {
             _animationView.Move(direction);
             inputDirection = direction;
-            Debug.Log(_rb.velocity.y);
         }
         private void OnJump()
         {

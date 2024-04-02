@@ -22,10 +22,7 @@ namespace Portfolio
             _playerView.transform.position = new Vector3(0f,1f, 0f);    // spawn на точку старта уровня, запрашивать у уровня
             
         }
-        private void Start()
-        {
-            
-        }
+        public PlayerView GetPlayerView { get { return _playerView; } }
         private void OnDestroy()
         {
             _player.Dispose();

@@ -32,7 +32,14 @@ namespace Portfolio.PlayerSpace
                 _animator.SetFloat(_IdSpeedY, dir.y);
                 _animator.SetFloat(_IdSpeedX, dir.x);
             }
-
+        }
+        
+        public void PlayCustomAnimation(int animId)
+        {
+            _animator.SetTrigger(animId);
+        }
+        public void PlayCustomAnimation(int animId, bool value)
+        {
 
         }
     }
