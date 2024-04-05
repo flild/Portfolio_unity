@@ -1779,6 +1779,7 @@ MonoBehaviour:
       Value: {fileID: 3543332465084290753}
     - Key: 1
       Value: {fileID: 2478933155140069777}
+  _maxRayCastDistance: 3
 --- !u!136 &7590217615906496086
 CapsuleCollider:
   m_ObjectHideFlags: 0

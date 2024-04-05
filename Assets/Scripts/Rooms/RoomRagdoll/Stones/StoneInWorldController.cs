@@ -49,7 +49,7 @@ namespace Portfolio.RoomRagdoll.Stones
             _stoneMesh.transform.position = _handPosition.position;
             _stoneMesh.transform.parent = _handPosition;
             _stoneMesh.EnableLine();
-            _player.RaycastEvent += CalculateTrajectory;
+            _player.BigRaycastEvent += CalculateTrajectory;
         }
         private void CalculateTrajectory(RaycastHit hit)
         {
@@ -68,7 +68,7 @@ namespace Portfolio.RoomRagdoll.Stones
         public void Throw()
         {
             _playerAnimation.PlayCustomAnimation(_IdCustomAnimationThrow);
-            _player.RaycastEvent -= CalculateTrajectory;
+            _player.BigRaycastEvent -= CalculateTrajectory;
             var stone = GameObject.Instantiate(_stonePhysic, _head.position + _player.transform.right* _headOffset, Quaternion.identity);
             _stoneMesh.DisableLine();
             GameObject.Destroy(_stoneMesh.gameObject);

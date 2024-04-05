@@ -11,7 +11,10 @@ namespace Portfolio.PlayerSpace
         public PlayerAnimation AnimationController { get; private set; }
         [SerializeField]
         private SerializedDictionary<PlayerBodyParts, Transform> _BodyPartMap;
-        public event Action<RaycastHit> RaycastEvent;
+        [SerializeField]
+        private float _maxRayCastDistance;
+        public event Action<RaycastHit> SmallRaycastEvent;
+        public event Action<RaycastHit> BigRaycastEvent;
         public event Action FixedUpdateEvent;
         public void Initialize(PlayerAnimation anim)
         {
@@ -20,9 +23,22 @@ namespace Portfolio.PlayerSpace
         private void Update()
         {
             Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2,0));
-            if (Physics.Raycast(ray, out RaycastHit hit))
+            if (Physics.Raycast(ray, out RaycastHit hit, _maxRayCastDistance))
             {
-                RaycastEvent?.Invoke(hit);
+                SmallRaycastEvent?.Invoke(hit);
+            }
+            else
+            {
+                SmallRaycastEvent?.Invoke(hit);
+            }
+
+            if (Physics.Raycast(ray, out RaycastHit hitMax))
+            {
+                BigRaycastEvent?.Invoke(hitMax);
+            }
+            else
+            {
+                BigRaycastEvent?.Invoke(hitMax);
             }
         }
         private void FixedUpdate()
