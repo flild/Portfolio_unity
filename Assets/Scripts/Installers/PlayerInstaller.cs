@@ -8,11 +8,11 @@ namespace Portfolio
     public class PlayerInstaller : MonoInstaller
     {
         [SerializeField]
-        private PlayerSO _player;
+        private PlayerView _playerView;
 
         public override void InstallBindings()
         {
-            Container.BindInstance(_player).AsSingle();
+            Container.BindInstance(_playerView).AsSingle();
         }
     }
 }

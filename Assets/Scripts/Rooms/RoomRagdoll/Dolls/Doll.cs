@@ -1,9 +1,10 @@
+using Portfolio.Interfaces;
 using System;
 using UnityEngine;
 
 namespace Portfolio.RoomRagdoll.Dolls
 {
-    public class Doll : MonoBehaviour
+    public class Doll : MonoBehaviour, IHittable
     {
         [SerializeField]
         private DollView _view;

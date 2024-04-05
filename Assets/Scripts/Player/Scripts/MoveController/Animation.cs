@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Portfolio.PlayerSpace
 {
-    public class Animation
+    public class PlayerAnimation
     {
         private Animator _animator;
         private bool _isMoving;
@@ -11,7 +11,7 @@ namespace Portfolio.PlayerSpace
         private readonly int _IdSpeedY = Animator.StringToHash("SpeedY");
         private readonly int _IdIsMoving = Animator.StringToHash("IsMoving");
         //IsMoving
-        public Animation(Animator animator)
+        public PlayerAnimation(Animator animator)
         {
             if (animator == null)
                 Debug.LogError("animator in Animation is null");
@@ -33,14 +33,18 @@ namespace Portfolio.PlayerSpace
                 _animator.SetFloat(_IdSpeedX, dir.x);
             }
         }
-        
+        public void SetCustomAnimator(RuntimeAnimatorController animator)
+        {
+            //вообще дичь, аниматор сам должен возразать дефолтное значение, когда надо
+            _animator.runtimeAnimatorController = animator;
+        }
         public void PlayCustomAnimation(int animId)
         {
             _animator.SetTrigger(animId);
         }
         public void PlayCustomAnimation(int animId, bool value)
         {
-
+            _animator.SetBool(animId, value);
         }
     }
 }

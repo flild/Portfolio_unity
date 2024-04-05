@@ -12,10 +12,15 @@ namespace Portfolio.PlayerSpace
             [SerializeField]
             private InputReaderSO _input;
             private PlayerControll _movement;
+            private PlayerRayCastHandler _rayCastHandler;
+        private PlayerAnimation _playerAnimation;
             public void Init(PlayerView view)
             {
                 _view = view;
-                _movement = new PlayerControll(_view, _input, _stats);
+                _playerAnimation = new PlayerAnimation(_view.GetComponent<Animator>());
+                _view.Initialize(_playerAnimation);
+                _movement = new PlayerControll(_view, _input, _stats, _playerAnimation);
+                _rayCastHandler = new PlayerRayCastHandler(_view);
             }
             public PlayerStatsSO GetStats()
             {
