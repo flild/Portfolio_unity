@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61a34f5016d9cd5458fef2603587cc91, type: 3}
+  m_Name: Level2RagdollRoomSettings
+  m_EditorClassIdentifier: 
+  _levelHolesSettings:
+    _serializedList:
+    - Key: 0
+      Value: {x: -13.13, y: 0.05, z: 3}
+    - Key: 1
+      Value: {x: -13.573, y: 0.05, z: -1.69}
+    - Key: 2
+      Value: {x: -13.41, y: 0.05, z: -5.8}
+  _levelDollsSettings:
+    _serializedList:
+    - Key: 0
+      Value: {x: -13.538, y: 5.985, z: 3.556}
+    - Key: 1
+      Value: {x: -12.047, y: 3.25, z: -1.73}
+    - Key: 2
+      Value: {x: -13.361, y: 4.614, z: -4.253}

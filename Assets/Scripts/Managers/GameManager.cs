@@ -5,7 +5,7 @@ namespace Portfolio
 {
     public class GameManager : MonoBehaviour
     {
-        private LevelController _levelController;
+        private RoomController _levelController;
         [SerializeField]
         private SceneController _sceneController;
         [SerializeField]
@@ -16,8 +16,8 @@ namespace Portfolio
 
         private void Awake()
         {
-            _levelController = new LevelController(_sceneController);
-            _levelController.LoadNextLevel();
+            _levelController = new RoomController(_sceneController);
+            _levelController.LoadNextRoom();
             _player.Init(_playerView);
             _playerView.transform.position = new Vector3(0f,1f, 0f);    // spawn на точку старта уровня, запрашивать у уровня
             
